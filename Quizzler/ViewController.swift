@@ -61,8 +61,10 @@ class ViewController: UIViewController {
     func updateUI() {
         questionLabel.text = questions[currentQuestionNumber].text
         let currentCount = currentQuestionNumber + 1
-        progressLabel.text = "\(currentCount)/\(questions.count)"
         
+        scoreLabel.text = "Score: \(answeredCorrectly)"
+        
+        self.progressLabel.text = "\(currentCount)/\(self.questions.count)"
         UIView.animate(withDuration: 0.2) {
             self.progressBar.frame.size.width = CGFloat(currentCount) * (self.view.frame.size.width / CGFloat(self.questions.count))
         }
